@@ -1,0 +1,72 @@
+/* CSS styles */
+body {
+    background-color: #f6f6f6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: purple;
+}
+
+#filter {
+    margin-bottom: 20px;
+}
+
+#filter label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#filter input[type="date"] {
+    padding: 5px;
+}
+
+#filter button {
+    padding: 5px 10px;
+    background-color: rgb(0, 23, 128);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.news-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgb(241, 244, 223);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h2 {
+    margin: 0;
+    color: purple;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.news-item p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.news-item a {
+    color: purple;
+    text-decoration: none;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+.news-item .summary {
+    font-style: italic;
+}
+
+.news-item .date {
+    font-style: Arial;
+    font-size: 14px;
+    color: #888;
+}
