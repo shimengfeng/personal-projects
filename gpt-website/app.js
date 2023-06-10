@@ -1,3 +1,4 @@
+// TODO (Shimeng): Find a news API to dynamically script and populate the website
 // Fetch the news data from the JSON file
 fetch('newsData.json')
   .then(response => response.json())
