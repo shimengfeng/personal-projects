@@ -1,10 +1,9 @@
+import streamlit as st
+import replicate
 import os
 
-import replicate
-import streamlit as st
-
 # App title
-st.set_page_config(page_title="Chatbot to Create Kids Stories")
+st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
 
 # Replicate Credentials
 with st.sidebar:
@@ -19,7 +18,7 @@ with st.sidebar:
         else:
             st.success("Proceed to entering your prompt message!", icon="👉")
 
-    # Refactored from https://github.com/a16z-infra/llama2-chatbot
+    # Refactored from <https://github.com/a16z-infra/llama2-chatbot>
     st.subheader("Models and parameters")
     selected_model = st.sidebar.selectbox(
         "Choose a Llama2 model",
@@ -43,14 +42,7 @@ with st.sidebar:
         "max_length", min_value=64, max_value=4096, value=512, step=8
     )
 
-    # st.markdown(
-    #     "📖 Learn how to build this app in this [blog](https://github.com/yiqiao-yin/WYN-llama/tree/main)!"
-    # )
-    # st.markdown(
-    #     """
-    #     @ [Yiqiao Yin](https://www.y-yin.io/) | [LinkedIn](https://www.linkedin.com/in/yiqiaoyin/) | [LinkedIn](https://youtube.com/YiqiaoYin/)
-    # """
-    # )
+    st.markdown("📖 Learn how to build this app in this [blog](#link-to-blog)!")
 os.environ["REPLICATE_API_TOKEN"] = replicate_api
 
 # Store LLM generated responses
@@ -79,9 +71,9 @@ def generate_llama2_response(prompt_input):
     string_dialogue = "You are a helpful assistant. You do not respond as 'User' or pretend to be 'User'. You only respond once as 'Assistant'."
     for dict_message in st.session_state.messages:
         if dict_message["role"] == "user":
-            string_dialogue += "User: " + dict_message["content"] + "\n\n"
+            string_dialogue += "User: " + dict_message["content"] + "\\n\\n"
         else:
-            string_dialogue += "Assistant: " + dict_message["content"] + "\n\n"
+            string_dialogue += "Assistant: " + dict_message["content"] + "\\n\\n"
     output = replicate.run(
         llm,
         input={
